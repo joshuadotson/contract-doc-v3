@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/src/serverless.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/src/serverless.js"
+    },
+    {
+      "src": "/documents/(.*)",
+      "dest": "server/src/serverless.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "server/src/serverless.js"
+    },
+    {
+      "src": "/vendor/(.*)",
+      "dest": "server/src/serverless.js"
+    },
+    {
+      "src": "/web/(.*)",
+      "dest": "server/src/serverless.js"
+    },
+    {
+      "src": "/compiled/(.*)",
+      "dest": "server/src/serverless.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "server/src/serverless.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "server/src/serverless.js": {
+      "maxDuration": 30
+    }
+  }
+}
