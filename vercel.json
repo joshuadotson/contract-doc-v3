@@ -38,10 +38,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "server/src/serverless.js": {
-      "maxDuration": 30
-    }
   }
 }
